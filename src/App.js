@@ -6,7 +6,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          The <code>src/App.js</code> is being rendered!
+          The
+          {' '}
+          <code>src/App.js</code>
+          {' '}
+          is being rendered!
         </p>
       </header>
     </div>
