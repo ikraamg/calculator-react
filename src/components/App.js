@@ -14,12 +14,10 @@ export default class App extends Component {
   render() {
     const { result } = this.state;
     return (
-      <div className="App">
-        <main className="App-body">
-          <h1>Magic Calculator</h1>
-          <Display result={result} />
-          <ButtonPanel />
-        </main>
+      <div className="App-body">
+        <h1>Math Magicians Calculator</h1>
+        <Display result={result} />
+        <ButtonPanel />
       </div>
     );
   }

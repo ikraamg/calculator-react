@@ -4,6 +4,6 @@ import App from './App';
 
 test('checks if test in App is being rendered', () => {
   const { getByText } = render(<App />);
-  const textElement = getByText(/Magic Calculator/i);
+  const textElement = getByText(/Math Magicians Calculator/i);
   expect(textElement).toBeInTheDocument();
 });
