@@ -6,7 +6,7 @@
 <br />
 <p align="center">
   <a href="git@github.com:ikraamg/calculator-react.git">
-    <p align="center"> <img src="" alt="calculator-react" height="200"> </p>
+    <p align="center"> <img src="https://user-images.githubusercontent.com/34813339/93921506-eca8a200-fd10-11ea-8c9e-a7d744cb0012.png" alt="calculator-react" height="200"> </p>
   </a>
 
   <h3 align="center">A Calculator built in React.js</h3>
