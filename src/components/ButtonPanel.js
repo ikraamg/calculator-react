@@ -8,7 +8,7 @@ export default function ButtonPanel({ clickHandler }) {
     <div>
       <div className="gp1 gp">
         <Button name="AC" color="white" clickHandler={clickHandler} />
-        <Button name="+/−" color="white" clickHandler={clickHandler} />
+        <Button name="+/-" color="white" clickHandler={clickHandler} />
         <Button name="%" color="white" clickHandler={clickHandler} />
         <Button name="÷" clickHandler={clickHandler} />
       </div>
