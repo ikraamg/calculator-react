@@ -7,7 +7,7 @@ export default function ButtonPanel() {
     <div>
       <div className="gp1 gp">
         <Button name="AC" color="white" />
-        <Button name="+-" color="white" />
+        <Button name="+/−" color="white" />
         <Button name="%" color="white" />
         <Button name="÷" />
       </div>
