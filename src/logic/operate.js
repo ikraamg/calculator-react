@@ -21,11 +21,11 @@ export default function operate(numberOne = 0, numberTwo = 0, operation) {
       result = num1.div(Big(100));
       break;
     case '+/-':
-      result = num1.div(Big(-1));
+      result = num1.times(Big(-1));
       break;
     default:
       result = 0;
       break;
   }
-  return result.toPrecision();
+  return result.toFixed(3);
 }
