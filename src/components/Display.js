@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './display.scss';
 
-export default function Display({ total, next, operation }) {
+export default function Display(props) {
+  const { next, operation } = props;
+  let { total } = props;
+  if ((total) === '') {
+    total = '0';
+  }
   return (
     <div className="display">
       {total}
