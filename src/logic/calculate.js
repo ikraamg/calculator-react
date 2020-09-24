@@ -6,32 +6,36 @@ export default function calculate(data, buttonName) {
   const numberList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
   const modifierList = ['%', '+/-'];
 
-  // check if display is cleared
-  if (buttonName === 'AC') {
+  // Clear display
+  if (buttonName === 'AC' || total === 'NaN') {
     return { total: '', next: '', operation: '' };
   }
 
+  try {
   // Operation cases where all variables are filled
-  if (total !== '' && next !== '' && operation !== '') {
+    if (total !== '' && next !== '' && operation !== '') {
+      if (buttonName === '=') {
+        return { total: operate(total, next, operation), next: '', operation: '' };
+      }
+      if (operatorList.includes(buttonName)) {
+        return { total: operate(total, next, operation), next: '', operation: buttonName };
+      }
+      if (modifierList.includes(buttonName)) {
+        return { total: operate(total, 0, buttonName), next: '', operation: '' };
+      }
+    }
+
+    // Ignore '=' when not used above
     if (buttonName === '=') {
-      return { total: operate(total, next, operation), next: '', operation: '' };
+      return { total, next, operation };
     }
-    if (operatorList.includes(buttonName)) {
-      return { total: operate(total, next, operation), next: '', operation: buttonName };
-    }
-    if (modifierList.includes(buttonName)) {
+
+    // Operate for modifiers
+    if (modifierList.includes(buttonName) && total !== '' && next === '') {
       return { total: operate(total, 0, buttonName), next: '', operation: '' };
     }
-  }
-
-  // Ignore '=' when not used above
-  if (buttonName === '=') {
-    return { total, next, operation };
-  }
-
-  // Operate for modifiers
-  if (modifierList.includes(buttonName) && total !== '' && next === '') {
-    return { total: operate(total, 0, buttonName), next: '', operation: '' };
+  } catch (err) {
+    return { total: 'NaN', next: '', operation: '' };
   }
 
   // return next number digits
