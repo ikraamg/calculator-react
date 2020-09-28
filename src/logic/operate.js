@@ -27,5 +27,5 @@ export default function operate(numberOne = 0, numberTwo = 0, operation) {
       result = 0;
       break;
   }
-  return result.toFixed(3);
+  return parseFloat(result.toFixed(3));
 }
